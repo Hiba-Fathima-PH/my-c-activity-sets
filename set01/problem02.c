@@ -2,22 +2,40 @@
 
 #include <stdio.h>
 
-int main() {
-    int num1, num2, sum;
+void input(int *aa, int *ab);
+int add(int a, int b);
+void output(int a, int b, int sum);
 
-    printf("Enter two integers: ");
-    
-    scanf("%d %d", &num1, &num2);
+int main()
+{
+    int a, b, sum;
 
-    sum = num1 + num2;
-
-    printf("The sum of %d and %d is: %d\n", num1, num2, sum);
+    input(&a, &b);
+    sum = add(a, b);
+    output(a, b, sum);
 
     return 0;
 }
 
+void input(int *aa, int *ab)
+{
+    printf("Enter two numbers: ");
+    scanf("%d %d", aa, ab);
+}
+
+int add(int a, int b)
+{
+    return a + b;
+}
+
+void output(int a, int b, int sum)
+{
+    printf("%d + %d = %d\n", a, b, sum);
+}
+
+
 INPUT
-14 25
+15 25
 
 OUTPUT
-  The sum of 14 and 25 is: 39
+15 + 25 = 40
